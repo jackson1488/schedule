@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание колледжа</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Расписание колледжа</h1>
+
+    <!-- Выбор группы -->
+    <div class="group-select">
+      <label for="group">Выберите группу: </label>
+      <select id="group" onchange="updateSchedule()">
+        <option value="G Группа">G Группа</option>
+        <option value="Другая Группа">Другая Группа</option>
+      </select>
+    </div>
+
+    <!-- Навигация по дням -->
+    <div class="days-nav">
+      <button onclick="setDay('Понедельник')">Понедельник</button>
+      <button onclick="setDay('Вторник')">Вторник</button>
+      <button onclick="setDay('Среда')">Среда</button>
+      <button onclick="setDay('Четверг')">Четверг</button>
+      <button onclick="setDay('Пятница')">Пятница</button>
+      <button onclick="setDay('Суббота')">Суббота</button>
+      <button onclick="setDay('Воскресенье')">Воскресенье</button>
+    </div>
+
+    <!-- Таблица расписания -->
+    <h2>Сегодняшнее расписание</h2>
+    <table id="schedule-table">
+      <thead>
+        <tr>
+          <th>Время</th>
+          <th>Предмет</th>
+          <th>Преподаватель</th>
+          <th>Аудитория</th>
+        </tr>
+      </thead>
+      <tbody id="schedule-body"></tbody>
+    </table>
+
+    <!-- Кнопка уведомлений -->
+    <button class="notification-btn" onclick="enableNotifications()">Включить уведомления</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
